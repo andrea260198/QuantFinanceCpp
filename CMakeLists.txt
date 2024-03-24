@@ -8,3 +8,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Include sub-projects.
 add_subdirectory(InterestRates)
 add_subdirectory(DataFrame)
+add_subdirectory(Gui)
