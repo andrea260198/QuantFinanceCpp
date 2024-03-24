@@ -11,13 +11,13 @@ template<class T0, class T1, class T2>
 class DataFrame
 {
 public:
-	DataFrame(std::vector<T0> index, std::vector<T1> columns, std::vector<std::vector<T2>> data)
-		: mIndex(index)
-		, mColumns(columns)
-		, mData(data)
-	{
+    DataFrame(std::vector<T0> index, std::vector<T1> columns, std::vector<std::vector<T2>> data)
+        : mIndex(index)
+        , mColumns(columns)
+        , mData(data)
+    {
 
-	}
+    }
 	
 	// Copy constructor
 	DataFrame(const DataFrame<T0, T1, T2> &df)

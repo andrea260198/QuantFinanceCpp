@@ -17,3 +17,8 @@ I have to use C\+\+17.
 ## DataFrame Library
 
 I created my own version of the Pandas DataFrame class to use it in C\+\+.
+
+
+## CMake
+
+The project is using CMake as build system to be able to build the code on Windows and Linux.
