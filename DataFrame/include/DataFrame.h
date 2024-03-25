@@ -18,44 +18,44 @@ public:
     {
 
     }
-	
-	// Copy constructor
-	DataFrame(const DataFrame<T0, T1, T2> &df)
-		: mIndex(df.mIndex)
-		, mColumns(df.mColumns)
-		, mData(df.mData)
-	{
-		std::cout << "df is copy constructed\n";
-	}
+    
+    // Copy constructor
+    DataFrame(const DataFrame<T0, T1, T2> &df)
+        : mIndex(df.mIndex)
+        , mColumns(df.mColumns)
+        , mData(df.mData)
+    {
+        std::cout << "df is copy constructed\n";
+    }
 
-	std::vector<T2> iloc(const int row_n)
-	{
-		return mData[row_n];
-	}
+    std::vector<T2> iloc(const int row_n)
+    {
+        return mData[row_n];
+    }
 
     T2 iloc(const int row_n, const int columns_n)
-	{
-		return mData[row_n][columns_n];
-	}
+    {
+        return mData[row_n][columns_n];
+    }
 
     void append(const DataFrame<T0, T1, T2> df)
-	{
-		if (df.mColumns == mColumns)
-		{
+    {
+        if (df.mColumns == mColumns)
+        {
             mIndex.insert(std::end(mIndex), std::begin(df.mIndex), std::end(df.mIndex));
             mData.insert(std::end(mData), std::begin(df.mData), std::end(df.mData));
         } else
         {
             throw std::invalid_argument("Columns mismatch");
         }
-	}
+    }
 
     std::string toString();
-	
+    
 private:
-	std::vector<T0> mIndex;
-	std::vector<T1> mColumns;
-	std::vector<std::vector<T2>> mData;
+    std::vector<T0> mIndex;
+    std::vector<T1> mColumns;
+    std::vector<std::vector<T2>> mData;
 };
 
 
