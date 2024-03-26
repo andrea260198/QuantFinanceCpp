@@ -27,9 +27,6 @@ private:
     double r0 = 0.1;
     double r;
     double dt = 0.001;
-    double a = 0.20;
-    double b = 0.05;
-    double sigma = 0.03;
     double dr;
     double integral_r_dt;
     int M = 20;
