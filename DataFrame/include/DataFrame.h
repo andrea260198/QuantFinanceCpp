@@ -7,11 +7,11 @@
 #include <string>
 
 
-template<class T0, class T1, class T2>
+template<class TIndex, class TCols, class TData>
 class DataFrame
 {
 public:
-    DataFrame(std::vector<T0> index, std::vector<T1> columns, std::vector<std::vector<T2>> data)
+    DataFrame(std::vector<TIndex> index, std::vector<TCols> columns, std::vector<std::vector<TData>> data)
         : mIndex(index)
         , mColumns(columns)
         , mData(data)
@@ -20,7 +20,7 @@ public:
     }
     
     // Copy constructor
-    DataFrame(const DataFrame<T0, T1, T2> &df)
+    DataFrame(const DataFrame<TIndex, TCols, TData> &df)
         : mIndex(df.mIndex)
         , mColumns(df.mColumns)
         , mData(df.mData)
@@ -28,17 +28,26 @@ public:
         std::cout << "df is copy constructed\n";
     }
 
-    std::vector<T2> iloc(const int row_n)
+    // Move constructor
+    DataFrame(const DataFrame<TIndex, TCols, TData> &&df)
+        : mIndex(  std::move(df.mIndex))
+        , mColumns(std::move(df.mColumns))
+        , mData(   std::move(df.mData))
+    {
+        std::cout << "df is move constructed\n";
+    }
+
+    std::vector<TData> iloc(const int row_n)
     {
         return mData[row_n];
     }
 
-    T2 iloc(const int row_n, const int columns_n)
+    TData iloc(const int row_n, const int columns_n)
     {
         return mData[row_n][columns_n];
     }
 
-    void append(const DataFrame<T0, T1, T2> df)
+    void append(const DataFrame<TIndex, TCols, TData> df)
     {
         if (df.mColumns == mColumns)
         {
@@ -53,14 +62,14 @@ public:
     std::string toString();
     
 private:
-    std::vector<T0> mIndex;
-    std::vector<T1> mColumns;
-    std::vector<std::vector<T2>> mData;
+    std::vector<TIndex> mIndex;
+    std::vector<TCols> mColumns;
+    std::vector<std::vector<TData>> mData;
 };
 
 
-template<class T0, class T1, class T2>
-std::string DataFrame<T0, T1, T2>::toString()
+template<class TIndex, class TCols, class TData>
+std::string DataFrame<TIndex, TCols, TData>::toString()
 {
     std::string df_str;
 
@@ -71,7 +80,7 @@ std::string DataFrame<T0, T1, T2>::toString()
     {
         auto columnName = mColumns[j];
 
-        if constexpr (std::is_same_v<T1, std::string>)
+        if constexpr (std::is_same_v<TCols, std::string>)
         {
             df_str += columnName;
         } else
@@ -92,7 +101,7 @@ std::string DataFrame<T0, T1, T2>::toString()
         auto row = mData[i];
 
         // Print row index
-        if constexpr (std::is_same_v<T0, std::string>)
+        if constexpr (std::is_same_v<TIndex, std::string>)
         {
             df_str += mIndex[i] + ": ";
         } else

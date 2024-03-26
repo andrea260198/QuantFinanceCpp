@@ -31,4 +31,6 @@ int main()
 		std::cout << val << std::endl;
 	}
 
+    auto df4 = std::move(df3);
+
 }
