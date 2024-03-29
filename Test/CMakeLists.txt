@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #if(BUILD_TESTING)
-add_executable(InterestRatesTest interest_rates_test.cpp)
+add_executable(InterestRatesTest InterestRatesTest.cpp)
 
-target_include_directories(InterestRatesTest PUBLIC ../DataFrame/include)
 target_include_directories(InterestRatesTest PUBLIC ../InterestRates/include)
+target_include_directories(InterestRatesTest PUBLIC ../DataFrame/include)
 
 target_link_libraries(InterestRatesTest PUBLIC
     InterestRatesLib

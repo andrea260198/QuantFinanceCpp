@@ -2,12 +2,14 @@
 #include "Bond.h"
 
 
-TEST(TestTopic, TrivialEquality)
+TEST(BondPricing, YieldCalculation)
 {
-	Bond bond(10);
-	
+    Bond bond1(5);
+    Bond bond2(10);
+
     //EXPECT_EQ(bond.calcYield(), 0.074);
-    ASSERT_NEAR(bond.calcYield(), 0.0740, 0.0001);
+    ASSERT_NEAR(bond1.calcYield(), 0.0834, 0.0001);
+    ASSERT_NEAR(bond2.calcYield(), 0.0740, 0.0001);
 }
 
 /*
