@@ -10,5 +10,6 @@ include(CTest)
 # Include sub-projects.
 add_subdirectory(InterestRates)
 add_subdirectory(DataFrame)
-add_subdirectory(Gui)
+#add_subdirectory(Gui)
 add_subdirectory(Test)
+add_subdirectory(External/googletest)
