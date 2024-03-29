@@ -10,7 +10,7 @@ double Bond::calcBondPrice()
     for (int i = 0; i < M; i++)
     {
         seed++;
-        futures.push_back(std::async(std::launch::deferred, &Bond::calcExponentialOfIntegral, *this, seed));
+        futures.push_back(std::async(std::launch::async, &Bond::calcExponentialOfIntegral, *this, seed));
     }
 
     for (auto &future : futures)
