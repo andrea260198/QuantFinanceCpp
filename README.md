@@ -24,6 +24,6 @@ I created my own version of the Pandas DataFrame class to use it in C\+\+.
 The project is using CMake as build system to be able to build the code on Windows and Linux.
 
 
-## GTest
+## GoogleTest
 
-Unit tests are performed using **GTest** framework.
+Testing is performed using **GoogleTest** framework.
