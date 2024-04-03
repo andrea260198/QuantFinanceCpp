@@ -21,6 +21,7 @@ public:
 
 private:
     double calcExponentialOfIntegral(int seed);
+    std::future<double> calcExponentialOfIntegralAsync(int seed);
 
     CoxIngersollRossModel model;
     double bondPrice;

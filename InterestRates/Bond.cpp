@@ -10,7 +10,7 @@ double Bond::calcBondPrice()
     for (int i = 0; i < M; i++)
     {
         seed++;
-        futures.push_back(std::async(std::launch::async, &Bond::calcExponentialOfIntegral, *this, seed));
+        futures.push_back(calcExponentialOfIntegralAsync(seed));
     }
 
     for (auto &future : futures)
@@ -26,6 +26,17 @@ double Bond::calcBondPrice()
 double Bond::calcYield()
 {
     return -log(calcBondPrice()) / maturity;
+}
+
+
+std::future<double> Bond::calcExponentialOfIntegralAsync(int seed)
+{
+    return std::async(
+        std::launch::async, 
+        &Bond::calcExponentialOfIntegral, 
+        *this, 
+        seed
+	);
 }
 
 
