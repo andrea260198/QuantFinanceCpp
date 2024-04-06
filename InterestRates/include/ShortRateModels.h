@@ -6,7 +6,7 @@
 class ShortRateModel
 {
 public:
-    virtual double dr(double r, double dt);
+    virtual double dr(double r, double dt) = 0;
 };
 
 
