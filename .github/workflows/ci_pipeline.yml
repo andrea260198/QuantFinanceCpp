@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Install Ninja
-        uses: sudo apt-get update -y; sudo apt-get install -y ninja-build
+        run: sudo apt-get update -y; sudo apt-get install -y ninja-build
       - name: Set file permissions
         run: chmod +x test.sh
       - name: Run tests
