@@ -30,7 +30,7 @@ private:
     double dt = 0.001;
     double dr;
     double integral_r_dt;
-    int M = 20;
+    int M = 100'000;
     int seed = 0;
     double maturity = 10;
 };
