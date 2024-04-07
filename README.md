@@ -32,7 +32,7 @@ Unit tests are defined using the GoogleTest framework, then built and run using
 
 ## CERN Root
 
-The goal would be to create plots using **CERN Root** framwork, which was
+The goal would be to create plots using **CERN Root** framework, which was
 developed to plot the results from the experiments at CERN in Geneva.
 
 This is still a work in progress.
