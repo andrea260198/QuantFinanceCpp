@@ -9,7 +9,7 @@ The goal of this project is to replicate the **quant_finance** repository
 previously created using Python language. We want to assess the differences between 
 writing a quantitative finance repository in C\+\+ rather than Python.
 
-The projects will also have a **GUI** built using the **Qt Framework**.
+The project will also have a **GUI** built using the **Qt Framework**.
 
 
 ## DataFrame Library
