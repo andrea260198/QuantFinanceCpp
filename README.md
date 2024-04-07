@@ -42,3 +42,11 @@ This is still a work in progress.
 
 Multithreading is used with `std::async`, when pricing bonds with Monte Carlo
 simulations.
+
+
+## CI/CD
+
+# CI pipeline
+
+The CI pipeline runs the unit tests every time `git push` command is 
+executed.
