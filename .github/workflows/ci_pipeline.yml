@@ -15,9 +15,7 @@ jobs:
           architecture: x64
       - name: Checkout
         uses: actions/checkout@v1
-#     - name: Install requirements
-#       run: make install
       - name: Set file permissions
-      - run: chmod +x test.sh
+        run: chmod +x test.sh
       - name: Run tests
         run: ./test.sh
