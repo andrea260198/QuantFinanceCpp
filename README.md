@@ -1,6 +1,6 @@
 # Quantitative Finance C\+\+ Project
 
-![image](Img/Stocks.png)
+![image](Img/Stocks.jpg)
 
 
 ## Introduction
