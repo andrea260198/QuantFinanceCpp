@@ -36,3 +36,8 @@ The goal would be to create plots using **CERN Root** framwork, which was
 developed to plot the results from the experiments at CERN in Geneva.
 
 This is still a work in progress.
+
+
+## Multithreading
+
+Multithrading is used with `std::async`.
