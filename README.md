@@ -46,7 +46,7 @@ simulations.
 
 ## CI/CD
 
-# CI pipeline
+### CI pipeline
 
 The CI pipeline runs the unit tests every time `git push` command is 
 executed.
