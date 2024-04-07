@@ -1,17 +1,15 @@
 # Quantitative Finance C\+\+ Project
 
+![image](Img/Stocks.png)
+
 
 ## Introduction
 
-This project wants to replicate the **quant_finance** repository that 
-I created using **C++** instead of **Python**. I want to see the differences between coding 
-a big quant finance repo in C++ vs Python, in particular I want to verify how faster is C++
-compared to Python.
+The goal of this project is to replicate the **quant_finance** repository 
+previously created using Python language. We want to assess the differences between 
+writing a quantitative finance repository in C\+\+ rather than Python.
 
-The projects will have a **GUI** built using the **Qt Framework**.
-
-I wanted to create this project using C\+\+20 modules, but, since they are not yet supported by Qt,
-I have to use C\+\+17.
+The projects will also have a **GUI** built using the **Qt Framework**.
 
 
 ## DataFrame Library
@@ -21,9 +19,20 @@ I created my own version of the Pandas DataFrame class to use it in C\+\+.
 
 ## CMake
 
-The project is using CMake as build system to be able to build the code on Windows and Linux.
+The project uses CMake as build system. The choice was made to be able to build 
+the code both on Windows and Linux.
 
 
-## GoogleTest
+## CTest and GoogleTest
 
-Testing is performed using **GoogleTest** framework.
+Testing is performed using **GoogleTest** and **CTest**.
+Unit tests are defined using the GoogleTest framework, then built and run using
+`ctest` commands.
+
+
+## CERN Root
+
+The goal would be to create plots using **CERN Root** framwork, which was
+developed to plot the results from the experiments at CERN in Geneva.
+
+This is still a work in progress.
