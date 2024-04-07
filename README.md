@@ -40,5 +40,5 @@ This is still a work in progress.
 
 ## Multithreading
 
-Multithrading is used with `std::async`, when pricing bonds with Monte Carlo
-simulation.
+Multithreading is used with `std::async`, when pricing bonds with Monte Carlo
+simulations.
