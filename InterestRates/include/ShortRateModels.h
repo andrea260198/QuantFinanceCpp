@@ -6,6 +6,11 @@
 class ShortRateModel
 {
 public:
+    double dX(double dt) {
+        int bernoulli_rv = rand() % 2;
+        return (2 * bernoulli_rv - 1) * sqrt(dt);
+    }
+
     virtual double dr(double r, double dt) = 0;
 };
 
@@ -15,7 +20,7 @@ class VasicekModel : public ShortRateModel
 public:
     double dr(double r, double dt) override
     {
-        double delta_r = a * (b - r) * dt + sigma * ((rand() % 2) - 0.5) * sqrt(dt);
+        double delta_r = a * (b - r) * dt + sigma * dX(dt);
         return delta_r;
     }
 
@@ -30,7 +35,7 @@ class CoxIngersollRossModel : public ShortRateModel
 public:
     double dr(double r, double dt) override
     {
-        double delta_r = a * (b - r) * dt + sigma * sqrt(r) * ((rand() % 2) - 0.5) * sqrt(dt);
+        double delta_r = a * (b - r) * dt + sigma * sqrt(r) * dX(dt);
         return delta_r;
     }
 
