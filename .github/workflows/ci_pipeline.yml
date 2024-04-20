@@ -15,6 +15,8 @@ jobs:
       - name: Install Ninja
         run: sudo apt-get update -y; sudo apt-get install -y ninja-build
       - name: Set file permissions
-        run: chmod +x test.sh
+        run: chmod +x build.sh test.sh 
+      - name: Build
+        run: ./build.sh  
       - name: Run tests
         run: ./test.sh
